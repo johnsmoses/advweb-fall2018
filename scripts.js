@@ -7,7 +7,7 @@ $(document).ready(function () {
    
     $.ajax({
     type: "GET",
-    url: "C:\Users\jmose\OneDrive\Documents\Current Semester\Adv Web Development\Module 1\resources.json",
+    url: "https://johnsmoses.github.io/advweb-fall2018/resources.json",
     success: function(result)
     {
     console.log(result);
