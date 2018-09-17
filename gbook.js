@@ -16,13 +16,10 @@ $(document).ready(function () {
 
     console.log(result);
     var output="<table><thead><tr><th>Name</th><th>Description</th><th>ISBN</th></thead><tbody>";
-    for (var i in result.Books)
     
-
-    {
         image = result.volumeInfo.imageLinks.smallThumbnail;
         output += "<tr><td>" + result.volumeInfo.title + "</td><td>" + result.volumeInfo.authors + "</td><td>" + '<img src='+ image + '" />' + "</td></tr>";
-    }
+    
     output+="</tbody></table>";
     displayResources.html(output);
 
