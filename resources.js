@@ -12,9 +12,9 @@ $(document).ready(function () {
     {
     console.log(result);
     var output="<table><thead><tr><th>Name</th><th>Provider</th><th>URL</th></thead><tbody>";
-    for (var i in result)
+    for (var i in result.Books)
     {
-    output += "<tr><td>" + result[i].Books.Title + "</td><td>" + result[i].Books.SubTitle + "</td><td>" + result[i].Books.isbn + "</td></tr>";
+    output += "<tr><td>" + result.Books[i].Title + "</td><td>" + result.Books[i].SubTitle + "</td><td>" + result.Books[i].isbn + "</td></tr>";
     }
     output+="</tbody></table>";
    
