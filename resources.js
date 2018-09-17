@@ -11,7 +11,7 @@ $(document).ready(function () {
     success: function(result)
     {
     console.log(result);
-    var output="<table><thead><tr><th>Name</th><th>Provider</th><th>URL</th></thead><tbody>";
+    var output="<table><thead><tr><th>Name</th><th>Description</th><th>ISBN</th></thead><tbody>";
     for (var i in result.Books)
     {
     output += "<tr><td>" + result.Books[i].Title + "</td><td>" + result.Books[i].SubTitle + "</td><td>" + result.Books[i].isbn + "</td></tr>";
