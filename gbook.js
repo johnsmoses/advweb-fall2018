@@ -34,4 +34,3 @@ $(document).ready(function () {
     });
 
    });
-output += "<tr><td>" + result.Books.Title + "</td><td>" + result.Books.SubTitle + "</td><td>" + '<img src='+ image + '" />' + "</td></tr>";
