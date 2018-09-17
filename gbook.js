@@ -15,7 +15,7 @@ $(document).ready(function () {
     {
 
     console.log(result);
-    var output="<table><thead><tr><th>Name</th><th>Description</th><th>ISBN</th></thead><tbody>";
+    var output="<table><thead><tr><th>Name</th><th>Author</th><th>Picture</th></thead><tbody>";
     
         image = result.volumeInfo.imageLinks.smallThumbnail;
         output += "<tr><td>" + result.volumeInfo.title + "</td><td>" + result.volumeInfo.authors + "</td><td>" + '<img src='+ image + '" />' + "</td></tr>";
