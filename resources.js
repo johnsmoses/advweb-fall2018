@@ -7,14 +7,14 @@ $(document).ready(function () {
    
     $.ajax({
     type: "GET",
-    url: "https://johnsmoses.github.io/advweb-fall2018/resources.json",
+    url: "https://johnsmoses.github.io/advweb-fall2018/google-books-search.json",
     success: function(result)
     {
     console.log(result);
     var output="<table><thead><tr><th>Name</th><th>Provider</th><th>URL</th></thead><tbody>";
     for (var i in result)
     {
-    output+="<tr><td>" + result[i].name + "</td><td>" + result[i].provider + "</td><td>" + result[i].url + "</td></tr>";
+    output += "<tr><td>" + result[i].items[i].kind + "</td><td>" + result[i].items[i].volumeInfo.title + "</td><td>" + result[i].url + "</td></tr>";    
     }
     output+="</tbody></table>";
    
