@@ -14,7 +14,7 @@ $(document).ready(function () {
     var output="<table><thead><tr><th>Name</th><th>Provider</th><th>URL</th></thead><tbody>";
     for (var i in result)
     {
-    output += "<tr><td>" + result[i].items[i] + "</td><td>" + result[i].items[i].volumeInfo + "</td><td>" + result[i].url + "</td></tr>";    
+    output += "<tr><td>" + result[i].items[i].kind[i] + "</td><td>" + result[i].items[i].kind[i] + "</td><td>" + result[i].items[i].kind[i] + "</td></tr>";    
     }
     output+="</tbody></table>";
    
