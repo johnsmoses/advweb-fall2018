@@ -6,7 +6,24 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script>
     $(function(){
-		var id="Wfan6L9RGgYC"; //or get the parameter value from the URL ?id=Wfan6L9RGgYC; you can Google how to do it.
+
+
+		var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+		var id=getUrlParameter('id'); //or get the parameter value from the URL ?id=Wfan6L9RGgYC; you can Google how to do it.
 		var service_point="https://www.googleapis.com/books/v1/volumes/"+id;
         $.getJSON(service_point, function (json)
         {
