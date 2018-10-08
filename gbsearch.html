@@ -64,7 +64,7 @@
             $('#buttonsub1').click(function() {
 
                 var term = $('#search_txt').val(); 
-                var parameter = "?q=" + term + "&startIndex=16&maxResults=15";
+                var parameter = "?q=" + term + "&startIndex=1&maxResults=15";
                 var service_point = "https://www.googleapis.com/books/v1/volumes/" + parameter;
                 $.getJSON(service_point, function(json) {
                     console.log(json);
@@ -93,7 +93,7 @@
             $('#buttonsub2').click(function() {
 
                 var term = $('#search_txt').val(); 
-                var parameter = "?q=" + term + "&startIndex=31&maxResults=15";
+                var parameter = "?q=" + term + "&startIndex=16&maxResults=15";
                 var service_point = "https://www.googleapis.com/books/v1/volumes/" + parameter;
                 $.getJSON(service_point, function(json) {
                     console.log(json);
@@ -122,7 +122,7 @@
             $('#buttonsub3').click(function() {
 
                 var term = $('#search_txt').val(); 
-                var parameter = "?q=" + term + "&startIndex=46&maxResults=15";
+                var parameter = "?q=" + term + "&startIndex=31&maxResults=15";
                 var service_point = "https://www.googleapis.com/books/v1/volumes/" + parameter;
                 $.getJSON(service_point, function(json) {
                     console.log(json);
@@ -151,7 +151,7 @@
             $('#buttonsub4').click(function() {
 
                 var term = $('#search_txt').val();
-                var parameter = "?q=" + term + "&startIndex=30&maxResults=15";
+                var parameter = "?q=" + term + "&startIndex=46&maxResults=15";
                 var service_point = "https://www.googleapis.com/books/v1/volumes/" + parameter;
                 $.getJSON(service_point, function(json) {
                     console.log(json);
