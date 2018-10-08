@@ -1,102 +1,56 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
-    <title>Google Books Search</title>
+	<title>Google Books Search</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
-
 <body>
-    <h1 id="title"></h1>
+<h1 id="title"></h1>
 
-    <div id="search">
-        <form id="search_form">
-            <input type="text" size="100" id="search_txt" placeholder="Search Term" />
-            <input type="button" id="buttonsub" value="Search">
-        </form>
-    </div>
+<div id="search">
+	<form id="search_form">
+	  <input type="text" size="100" id="search_txt" placeholder="Search Term" />
+	  <input type="button" id="buttonsub" value="Search">
+	</form>
+  </div>
 
-    <nav class="pageination">
-        <div class="prev">
-            << </div> <div class="current-page">
+<div id="results" style="display: flex; flex-wrap: wrap;"></div>
 
-        </div>
-        <div class="next">
-            >>
-        </div>
-    </nav>
-
-    <div id="results" style="display: flex; flex-wrap: wrap;"></div>
-
-    <script>
-        $(document).ready(function() {
+<script>
+	$(document).ready(function () {
             $('#buttonsub').click(function() {
 
+		var term = $('#search_txt').val(); //or get the value from a textbox user input; you can Google how to do it.
+		var parameter="?q="+term+"&startIndex=30&maxResults=15"; 
+		var service_point="https://www.googleapis.com/books/v1/volumes/"+parameter;
+        $.getJSON(service_point, function (json)
+        {
+			console.log(json);
+			var total=json.totalItems;
+			$("#total").text(total); 
+			
+			var resultHTML="";
+			for (i in json.items)
+			{
+				var booktitle=json.items[i].volumeInfo.title;
+				var bookid=json.items[i].id;
+				var cover="";
+				if (json.items[i].volumeInfo.imageLinks != null)
+					cover=json.items[i].volumeInfo.imageLinks.smallThumbnail;
 
-                var articleLimit = 2;
-                var currentPage = 1;
-                var $currentPage = $('.current-page');
-                var $articles = $('.bookdiv');
-                var totalArticles = $articles.length;
-                var totalPages = (totalArticles / articleLimit);
-
-                $articles.hide();
-                $currentPage.html(currentPage);
-                changePage();
-
-                $('.next').on('click', function() {
-                    currentPage++;
-                    if (currentPage > totalPages) {
-                        currentPage = 1;
-                    }
-                    changePage();
-                });
-                $('.prev').on('click', function() {
-                    currentPage--;
-                    if (currentPage < 1) {
-                        currentPage = totalPages;
-                    }
-                    changePage();
-                });
-
-                function changePage() {
-                    $articles.hide();
-                    $currentPage.html(currentPage);
-                    $($articles[currentPage * articleLimit - 1]).show();
-                    $($articles[currentPage * articleLimit - 2]).show();
-                }
-
-
-                var term = $('#search_txt').val(); //or get the value from a textbox user input; you can Google how to do it.
-                var parameter = "?q=" + term + "&startIndex=30&maxResults=15";
-                var service_point = "https://www.googleapis.com/books/v1/volumes/" + parameter;
-                $.getJSON(service_point, function(json) {
-                    console.log(json);
-                    var total = json.totalItems;
-                    $("#total").text(total);
-
-                    var resultHTML = "";
-                    for (i in json.items) {
-                        var booktitle = json.items[i].volumeInfo.title;
-                        var bookid = json.items[i].id;
-                        var cover = "";
-                        if (json.items[i].volumeInfo.imageLinks != null)
-                            cover = json.items[i].volumeInfo.imageLinks.smallThumbnail;
-
-                        resultHTML += "<div class='bookdiv'>";
-                        resultHTML += "<img src='" + cover + "' style='float: left' />";
-                        resultHTML += "<a href='bookinfo.html?id=" + bookid + "'>" + booktitle + "</a>";
-                        resultHTML += "</div>";;
-                    }
-                    $("#results").html(resultHTML);
-                    $(".bookdiv").css("width", "300px");
-                });
-
-            });
-        });
-    </script>
+				resultHTML+="<div class='bookdiv'>";
+				resultHTML+="<img src='"+cover+"' style='float: left' />";
+				resultHTML+="<a href='bookinfo.html?id="+bookid+"'>"+booktitle+"</a>";
+				resultHTML+="</div>";;
+			}
+			$("#results").html(resultHTML); 
+			$(".bookdiv").css("width", "300px");
+		});
+		
+	});
+	});
+</script>
 
 </body>
-
 </html>
