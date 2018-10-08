@@ -25,8 +25,15 @@
 
     <script>
         $(document).ready(function() {
+            $("#buttonsub1").hide();
+            $("#buttonsub2").hide();
+            $("#buttonsub3").hide();
+            $("#buttonsub4").hide();
             $('#buttonsub').click(function() {
-
+                $("#buttonsub1").show();
+                $("#buttonsub2").show();
+                $("#buttonsub3").show();
+                $("#buttonsub4").show();
                 var term = $('#search_txt').val(); //or get the value from a textbox user input; you can Google how to do it.
                 var parameter = "?q=" + term + "&startIndex=1&maxResults=15";
                 var service_point = "https://www.googleapis.com/books/v1/volumes/" + parameter;
