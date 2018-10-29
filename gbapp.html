@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Google Books Search</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="gbappsearch.js"></script>
+    <script src="gbappshelf.js"></script>
+    <script src="gbappdisplay.js"></script>
+</head>
+
+<body>
+    <h1 id="title">Search the Google Books Database</h1>
+
+    <div id="search">
+        <form id="search_form">
+            <input type="text" size="100" id="search_txt" placeholder="Search Term" />
+            <input type="button" id="buttonsub" value="Search">
+            <input type="button" id="buttonsub1" value="1">
+            <input type="button" id="buttonsub2" value="2">
+            <input type="button" id="buttonsub3" value="3">
+            <input type="button" id="buttonsub4" value="4">
+            <input type="button" id="buttonsub5" value="5">
+        </form>
+    </div>
+
+    <div id="results" style="display: flex; flex-wrap: wrap;"></div>
+
+    <h2>Bookshelf Name: <span id="shelf"></span>
+</h2>
+<div id="resultsshelf" style="display: flex; flex-wrap: wrap;"></div>
+
+<h3>Book: <span id="display"></span>
+</h3>
+<div id="resultsdisplay" style="display: flex; flex-wrap: wrap;"></div>
+
+    <h4 id="title"></h4>
+    <p><a id="webpage"></a></p>
+    <img id="cover" height=200 />
+    <p><a id="author"></a></p>
+    <p>Categories:</p>
+    <div id="category"></div>
+    <p><a id="maturity"></a></p>
+    
+    
+    
+</body>
+
+</html>
