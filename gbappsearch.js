@@ -38,7 +38,7 @@ $(document).ready(function() {
 
     });
 
-    $('#buttonsub').click(function() {
+    $('#buttonsub2').click(function() {
 
         var term = $('#search_txt').val(); //or get the value from a textbox user input; you can Google how to do it.
         var parameter = "?q=" + term + "&startIndex=16&maxResults=15";
@@ -68,7 +68,7 @@ $(document).ready(function() {
 
     });
 
-    $('#buttonsub').click(function() {
+    $('#buttonsub3').click(function() {
 
         var term = $('#search_txt').val(); //or get the value from a textbox user input; you can Google how to do it.
         var parameter = "?q=" + term + "&startIndex=31&maxResults=15";
@@ -98,7 +98,7 @@ $(document).ready(function() {
 
     });
 
-    $('#buttonsub').click(function() {
+    $('#buttonsub4').click(function() {
 
         var term = $('#search_txt').val(); //or get the value from a textbox user input; you can Google how to do it.
         var parameter = "?q=" + term + "&startIndex=46&maxResults=15";
@@ -128,7 +128,7 @@ $(document).ready(function() {
 
     });
 
-    $('#buttonsub').click(function() {
+    $('#buttonsub5').click(function() {
 
         var term = $('#search_txt').val(); //or get the value from a textbox user input; you can Google how to do it.
         var parameter = "?q=" + term + "&startIndex=30&maxResults=15";
