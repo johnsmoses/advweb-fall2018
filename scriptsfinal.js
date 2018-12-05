@@ -52,7 +52,7 @@ function search() {
   var term = document.getElementById('term').value;
 
   datab.call('/search/tv', {
-      'term': term,
+      'query': term,
     },
     function(set) {
       var results = Object.keys(set.results);
@@ -93,7 +93,7 @@ function search() {
     }
   )
   datab.call('/search/movie', {
-      'term': term,
+      'query': term,
     },
     function(set) {
       var results = Object.keys(set.results);
