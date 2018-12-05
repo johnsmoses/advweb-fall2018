@@ -6,19 +6,19 @@ html {
     box-sizing: border-box;
   }
   
-  #info div {
+  #item div {
     float: right;
     text-align: center;
     padding: 10px 0 10px 0;
     min-width: 18.5%;
   }
   
-  #info div:hover {
+  #item div:hover {
     background: rgb(104, 107, 105);
     transition: 0.2s ease-in-out;
   }
   
-  #info div p {
+  #item div p {
     margin-top: 5px;
     max-width: 200px;
   }
